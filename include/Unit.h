@@ -6,7 +6,9 @@
 #define STRATEGY_GAME_UNIT_H
 
 class Unit {
-
+ public:
+  Unit() = default;
+  virtual ~Unit() = default;
 };
 
 #endif //STRATEGY_GAME_UNIT_H

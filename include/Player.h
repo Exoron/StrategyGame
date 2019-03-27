@@ -11,9 +11,12 @@
 #include <UnitFactory.h>
 
 class Player {
+ public:
+  Player() = default;
 
  private:
-  std::vector<Unit> units_;
+  std::vector<UnitFactory*> unit_factories_;
+  std::vector<Unit*> units_;
 };
 
 #endif //STRATEGY_GAME_PLAYER_H

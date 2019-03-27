@@ -8,7 +8,10 @@
 #include <Unit.h>
 
 class UnitFactory {
-
+ public:
+  UnitFactory() = default;
+  virtual Unit create_unit() = 0;
+  virtual ~UnitFactory() = default;
 };
 
 #endif //STRATEGY_GAME_UNITFACTORY_H
