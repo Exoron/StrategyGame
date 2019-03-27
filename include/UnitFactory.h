@@ -10,7 +10,7 @@
 class UnitFactory {
  public:
   UnitFactory() = default;
-  virtual Unit create_unit() = 0;
+  virtual Unit create_unit() const = 0;
   virtual ~UnitFactory() = default;
 };
 

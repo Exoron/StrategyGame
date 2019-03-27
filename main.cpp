@@ -9,7 +9,7 @@
 #include <UnitFactory.h>
 
 int main() {
-  Player player;
+  //Player player;
 
   std::cout << "Success" << std::endl;
 }
