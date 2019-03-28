@@ -4,12 +4,16 @@
 
 #include <iostream>
 
-#include <Player.h>
-#include <Unit.h>
-#include <UnitFactory.h>
+#include <GemsPlayer.h>
 
 int main() {
-  //Player player;
+  Player* player = new GemsPlayer();
+
+  player->BuildFactory(0);
+  player->CreateUnit(0);
+  player->SayAll();
+
+  delete player;
 
   std::cout << "Success" << std::endl;
 }

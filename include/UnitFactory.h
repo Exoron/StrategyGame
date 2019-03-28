@@ -10,8 +10,9 @@
 class UnitFactory {
  public:
   UnitFactory() = default;
-  virtual Unit create_unit() const = 0;
   virtual ~UnitFactory() = default;
+
+  virtual Unit* create_unit() const = 0;
 };
 
 #endif //STRATEGY_GAME_UNITFACTORY_H

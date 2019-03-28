@@ -5,3 +5,9 @@ project(strategy_game)
 include_directories(include)
 
 add_executable(Strategy_game main.cpp)
+
+add_subdirectory(src/fractions)
+add_subdirectory(src/factories)
+add_subdirectory(src/units)
+
+target_link_libraries(Strategy_game Fractions Factories Units)

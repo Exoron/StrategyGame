@@ -9,6 +9,8 @@ class Unit {
  public:
   Unit() = default;
   virtual ~Unit() = default;
+
+  virtual void Say() const {};
 };
 
 #endif //STRATEGY_GAME_UNIT_H
