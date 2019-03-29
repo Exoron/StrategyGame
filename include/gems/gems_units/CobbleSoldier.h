@@ -5,8 +5,6 @@
 #ifndef STRATEGY_GAME_COBBLESOLDIER_H
 #define STRATEGY_GAME_COBBLESOLDIER_H
 
-#include <iostream>
-
 #include <Unit.h>
 
 class CobbleSoldier : public Unit {

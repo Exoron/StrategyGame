@@ -12,6 +12,8 @@ int main() {
 
   gems_player->BuildFactory(0);
   gems_player->CreateUnit(0);
+  gems_player->BuildFactory(1);
+  gems_player->CreateUnit(1);
 
   Player* alloys_player = new AlloysPlayer();
 

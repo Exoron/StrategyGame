@@ -9,8 +9,8 @@
 
 class GraniteWarrior : public Unit {
  public:
-  CobbleSoldier();
-  ~CobbleSoldier() override = default;
+  GraniteWarrior();
+  ~GraniteWarrior() override = default;
   void Say() const override;
 };
 
