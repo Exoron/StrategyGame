@@ -2,8 +2,6 @@
 // Created by exoron on 28.03.19.
 //
 
-#include <iostream>
-
 #include <gems/GemsPlayer.h>
 #include <gems/gems_factories/CobbleMine.h>
 

@@ -5,21 +5,21 @@
 #include <iostream>
 
 #include <gems/GemsPlayer.h>
-#include <alloys/alloys_factories/OreMine.h>
-#include <alloys/alloys_units/OreSoldier.h>
+#include <alloys/AlloysPlayer.h>
 
 int main() {
-  Player* player = new GemsPlayer();
+  Player* gems_player = new GemsPlayer();
 
-  player->BuildFactory(0);
-  player->CreateUnit(0);
+  gems_player->BuildFactory(0);
+  gems_player->CreateUnit(0);
 
-  OreMine ore_mine;
-  Unit* ore_soldier = ore_mine.CreateUnit();
+  Player* alloys_player = new AlloysPlayer();
 
-  delete ore_soldier;
+  alloys_player->BuildFactory(0);
+  alloys_player->CreateUnit(0);
 
-  delete player;
+  delete alloys_player;
+  delete gems_player;
 
   std::cout << "Success" << std::endl;
 }
