@@ -4,4 +4,4 @@ project(units_library)
 
 include_directories(../../include)
 
-add_library(Units STATIC CobbleSoldier.cpp)
+add_library(Units STATIC gems/CobbleSoldier.cpp alloys/OreSoldier.cpp)

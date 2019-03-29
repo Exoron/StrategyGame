@@ -4,4 +4,4 @@ project(factories_library)
 
 include_directories(../../include)
 
-add_library(Factories STATIC CobbleMine.cpp)
+add_library(Factories STATIC gems/CobbleMine.cpp)

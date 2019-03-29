@@ -4,4 +4,4 @@ project(fractions_library)
 
 include_directories(../../include)
 
-add_library(Fractions STATIC GemsPlayer.cpp)
+add_library(Fractions STATIC gems/GemsPlayer.cpp)
