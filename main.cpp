@@ -19,6 +19,8 @@ int main() {
 
   alloys_player->BuildFactory(0);
   alloys_player->CreateUnit(0);
+  alloys_player->BuildFactory(1);
+  alloys_player->CreateUnit(1);
 
   delete alloys_player;
   delete gems_player;
