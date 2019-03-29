@@ -5,7 +5,7 @@
 #ifndef STRATEGY_GAME_PLAYER_H
 #define STRATEGY_GAME_PLAYER_H
 
-#include <map>
+#include <unordered_map>
 #include <vector>
 
 #include <Unit.h>
@@ -29,11 +29,11 @@ class Player {
 
   virtual void BuildFactory(const int id) = 0;
   virtual void CreateUnit(const int id) {
-    units_.push_back(unit_factories_[id]->CreateUnit());
+    units_.push_back(unit_factories_.at(id)->CreateUnit());
   }
 
  protected:
-  std::map<int, UnitFactory*> unit_factories_;
+  std::unordered_map<int, UnitFactory*> unit_factories_;
   std::vector<Unit*> units_;
 };
 

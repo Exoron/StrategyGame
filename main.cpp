@@ -22,6 +22,18 @@ int main() {
   alloys_player->BuildFactory(1);
   alloys_player->CreateUnit(1);
 
+
+  try {
+    gems_player->BuildFactory(2);
+  } catch (std::out_of_range& exc) {
+    std::cout << "No matching factory" << std::endl;
+  }
+  try {
+    alloys_player->CreateUnit(2);
+  } catch(std::out_of_range& exc) {
+    std::cout << "No matching factory" << std::endl;
+  }
+
   delete alloys_player;
   delete gems_player;
 

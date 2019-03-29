@@ -13,8 +13,8 @@ void GemsPlayer::BuildFactory(const int id) {
       return;
     case 1:
       unit_factories_[id] = new GraniteQuerry();
-    default:
-
       return;
+    default:
+      throw std::out_of_range("No matching factory");
   }
 }

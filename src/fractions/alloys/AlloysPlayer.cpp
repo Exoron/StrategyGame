@@ -10,11 +10,11 @@ void AlloysPlayer::BuildFactory(const int id) {
   switch(id) {
     case 0:
       unit_factories_[id] = new OreMine();
+      return;
     case 1:
       unit_factories_[id] = new SteelPlant();
       return;
     default:
-
-      return;
+      throw std::out_of_range("No matching factory");
   }
 }
