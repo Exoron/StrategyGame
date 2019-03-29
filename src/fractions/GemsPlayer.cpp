@@ -4,8 +4,8 @@
 
 #include <iostream>
 
-#include <GemsPlayer.h>
-#include <gems_factories/CobbleMine.h>
+#include <gems/GemsPlayer.h>
+#include <gems/gems_factories/CobbleMine.h>
 
 void GemsPlayer::BuildFactory(const int id) {
   switch(id) {

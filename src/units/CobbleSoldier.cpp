@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-#include <gems_units/CobbleSoldier.h>
+#include <gems/gems_units/CobbleSoldier.h>
 
 CobbleSoldier::CobbleSoldier() {
   Say();

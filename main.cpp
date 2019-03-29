@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-#include <GemsPlayer.h>
+#include <gems/GemsPlayer.h>
 
 int main() {
   Player* player = new GemsPlayer();

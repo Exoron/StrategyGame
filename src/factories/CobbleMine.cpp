@@ -3,8 +3,8 @@
 //
 
 #include <Unit.h>
-#include <gems_factories/CobbleMine.h>
-#include <gems_units/CobbleSoldier.h>
+#include <gems/gems_factories/CobbleMine.h>
+#include <gems/gems_units/CobbleSoldier.h>
 
 Unit* CobbleMine::create_unit() const {
   return new CobbleSoldier();
