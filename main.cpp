@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include <gems/GemsPlayer.h>
+#include <alloys/alloys_factories/OreMine.h>
 #include <alloys/alloys_units/OreSoldier.h>
 
 int main() {
@@ -13,7 +14,10 @@ int main() {
   player->BuildFactory(0);
   player->CreateUnit(0);
 
-  OreSoldier ore_soldier;
+  OreMine ore_mine;
+  Unit* ore_soldier = ore_mine.CreateUnit();
+
+  delete ore_soldier;
 
   delete player;
 

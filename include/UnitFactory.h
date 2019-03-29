@@ -12,7 +12,7 @@ class UnitFactory {
   UnitFactory() = default;
   virtual ~UnitFactory() = default;
 
-  virtual Unit* create_unit() const = 0;
+  virtual Unit* CreateUnit() const = 0;
 };
 
 #endif //STRATEGY_GAME_UNITFACTORY_H

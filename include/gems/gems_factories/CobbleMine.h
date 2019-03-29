@@ -9,7 +9,7 @@
 
 class CobbleMine : public UnitFactory {
  public:
-  Unit* create_unit() const override;
+  Unit* CreateUnit() const override;
 };
 
 #endif //STRATEGY_GAME_COBBLEMINE_H

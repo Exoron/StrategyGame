@@ -29,7 +29,7 @@ class Player {
 
   virtual void BuildFactory(const int id) = 0;
   virtual void CreateUnit(const int id) {
-    units_.push_back(unit_factories_[id]->create_unit());
+    units_.push_back(unit_factories_[id]->CreateUnit());
   }
 
  protected:

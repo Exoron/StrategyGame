@@ -6,6 +6,6 @@
 #include <gems/gems_factories/CobbleMine.h>
 #include <gems/gems_units/CobbleSoldier.h>
 
-Unit* CobbleMine::create_unit() const {
+Unit* CobbleMine::CreateUnit() const {
   return new CobbleSoldier();
 }
