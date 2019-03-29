@@ -11,7 +11,6 @@ int main() {
 
   player->BuildFactory(0);
   player->CreateUnit(0);
-  player->SayAll();
 
   delete player;
 

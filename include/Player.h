@@ -31,11 +31,6 @@ class Player {
   virtual void CreateUnit(const int id) {
     units_.push_back(unit_factories_[id]->create_unit());
   }
-  void SayAll() const {
-    for(const auto unit : units_) {
-      unit->Say();
-    }
-  }
 
  protected:
   std::map<int, UnitFactory*> unit_factories_;

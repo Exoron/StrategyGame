@@ -11,7 +11,7 @@
 
 class CobbleSoldier : public Unit {
  public:
-  CobbleSoldier() = default;
+  CobbleSoldier();
   ~CobbleSoldier() override = default;
   void Say() const override;
 };
