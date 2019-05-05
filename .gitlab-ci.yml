@@ -1,4 +1,4 @@
-image: amardikian/clang-3.8
+image: m1kev4ndyke/docker-gtest
 
 stages:
     - build
@@ -12,3 +12,4 @@ build:
         - make
     tags:
         - twexor-runner
+
