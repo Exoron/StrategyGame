@@ -1,4 +1,4 @@
-image: gcc
+image: m1kev4ndyke/docker-gtest
 
 stages:
     - before_script
