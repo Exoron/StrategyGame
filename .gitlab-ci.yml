@@ -1,16 +1,12 @@
 image: amardikian/clang-3.8
 
 stages:
-    - cmake
     - build
     
-cmake:
-    stage: cmake
+build:
+    stage: build
     script:
         - mkdir build
         - cd build
         - cmake ../
-
-build:
-    stage: build
-    script: make
+        - make
