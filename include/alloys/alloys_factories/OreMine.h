@@ -9,7 +9,7 @@
 
 class OreMine : public UnitFactory {
  public:
-  Unit* CreateUnit() const override;
+  std::shared_ptr<Unit> CreateUnit() const override;
 };
 
 #endif //STRATEGY_GAME_OREMINE_H

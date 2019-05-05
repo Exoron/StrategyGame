@@ -5,6 +5,6 @@
 #include <alloys/alloys_factories/SteelPlant.h>
 #include <alloys/alloys_units/CrudeWarrior.h>
 
-Unit* SteelPlant::CreateUnit() const {
-  return new CrudeWarrior();
+std::shared_ptr<Unit> SteelPlant::CreateUnit() const {
+  return std::make_shared<CrudeWarrior>();
 }

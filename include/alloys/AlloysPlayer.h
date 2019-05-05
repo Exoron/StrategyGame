@@ -10,7 +10,7 @@
 class AlloysPlayer : public Player {
  public:
   ~AlloysPlayer() override = default;
-  void BuildFactory(const int id) override;
+  void BuildFactory(int id) override;
 };
 
 #endif //STRATEGY_GAME_ALLOYSPLAYER_H

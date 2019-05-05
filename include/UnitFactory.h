@@ -5,6 +5,7 @@
 #ifndef STRATEGY_GAME_UNITFACTORY_H
 #define STRATEGY_GAME_UNITFACTORY_H
 
+#include <memory>
 #include <Unit.h>
 
 class UnitFactory {
@@ -12,7 +13,7 @@ class UnitFactory {
   UnitFactory() = default;
   virtual ~UnitFactory() = default;
 
-  virtual Unit* CreateUnit() const = 0;
+  virtual std::shared_ptr<Unit> CreateUnit() const = 0;
 };
 
 #endif //STRATEGY_GAME_UNITFACTORY_H

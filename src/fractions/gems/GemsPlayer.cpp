@@ -9,10 +9,10 @@
 void GemsPlayer::BuildFactory(const int id) {
   switch(id) {
     case 0:
-      unit_factories_[id] = new CobbleMine();
+      unit_factories_[id] = std::make_shared<CobbleMine>();
       return;
     case 1:
-      unit_factories_[id] = new GraniteQuerry();
+      unit_factories_[id] = std::make_shared<GraniteQuerry>();
       return;
     default:
       throw std::out_of_range("No matching factory");

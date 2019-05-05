@@ -9,7 +9,7 @@
 
 class SteelPlant : public UnitFactory {
  public:
-  Unit* CreateUnit() const override;
+  std::shared_ptr<Unit> CreateUnit() const override;
 };
 
 #endif //STRATEGY_GAME_STEELPLANT_H

@@ -17,24 +17,16 @@ class Player {
 
   Player(const Player&) = delete;
   Player& operator=(const Player&) = delete;
-  virtual ~Player() {
-    for(auto*& unit : units_) {
-      delete unit;
-      unit = nullptr;
-    }
-    for(auto& factory : unit_factories_) {
-      delete factory.second;
-    }
-  }
+  virtual ~Player() = default;
 
-  virtual void BuildFactory(const int id) = 0;
+  virtual void BuildFactory(int id) = 0;
   virtual void CreateUnit(const int id) {
     units_.push_back(unit_factories_.at(id)->CreateUnit());
   }
 
  protected:
-  std::unordered_map<int, UnitFactory*> unit_factories_;
-  std::vector<Unit*> units_;
+  std::unordered_map<int, std::shared_ptr<UnitFactory>> unit_factories_;
+  std::vector<std::shared_ptr<Unit>> units_;
 };
 
 #endif //STRATEGY_GAME_PLAYER_H

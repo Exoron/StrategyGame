@@ -10,7 +10,7 @@
 class GemsPlayer : public Player {
  public:
   ~GemsPlayer() override = default;
-  void BuildFactory(const int id) override;
+  void BuildFactory(int id) override;
 };
 
 #endif //STRATEGY_GAME_GEMSPLAYER_H

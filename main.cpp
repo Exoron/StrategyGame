@@ -3,19 +3,22 @@
 //
 
 #include <iostream>
+#include <memory>
 
 #include <gems/GemsPlayer.h>
 #include <alloys/AlloysPlayer.h>
 
+#include <gtest/gtest.h>
+
 int main() {
-  Player* gems_player = new GemsPlayer();
+  std::shared_ptr<Player> gems_player = std::make_shared<GemsPlayer>();
 
   gems_player->BuildFactory(0);
   gems_player->CreateUnit(0);
   gems_player->BuildFactory(1);
   gems_player->CreateUnit(1);
 
-  Player* alloys_player = new AlloysPlayer();
+  std::shared_ptr<Player> alloys_player = std::make_shared<AlloysPlayer>();
 
   alloys_player->BuildFactory(0);
   alloys_player->CreateUnit(0);
@@ -33,9 +36,6 @@ int main() {
   } catch(std::out_of_range& exc) {
     std::cout << "No matching factory" << std::endl;
   }
-
-  delete alloys_player;
-  delete gems_player;
 
   std::cout << "Success" << std::endl;
 }
