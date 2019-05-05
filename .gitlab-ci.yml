@@ -10,3 +10,5 @@ build:
         - cd build
         - cmake ../
         - make
+    tags:
+        - twexor-runner
