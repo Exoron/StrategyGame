@@ -1,0 +1,15 @@
+image: amardikian/clang-3.8
+
+stages:
+    - build
+    
+build:
+    stage: build
+    script:
+        - mkdir build
+        - cd build
+        - cmake ../
+        - make
+    tags:
+        - twexor-runner
+
