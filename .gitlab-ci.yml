@@ -1,4 +1,4 @@
-image: m1kev4ndyke/docker-gtest
+image: amardikian/clang-3.8
 
 stages:
     - cmake
