@@ -1,9 +1,9 @@
 image: gcc
 
 stages:
-    -before_script
-    -cmake
-    -build
+    - before_script
+    - cmake
+    - build
     
 install_cmake:
     stage: before_script
