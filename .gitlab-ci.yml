@@ -9,7 +9,7 @@ cmake:
     script:
         - mkdir build
         - cd build
-        - cmake ..
+        - cmake ../
 
 build:
     stage: build
