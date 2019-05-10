@@ -14,6 +14,7 @@ class UnitFactory {
   virtual ~UnitFactory() = default;
 
   virtual std::shared_ptr<Unit> CreateUnit() const = 0;
+  virtual void Info() const = 0;
 };
 
 #endif //STRATEGY_GAME_UNITFACTORY_H

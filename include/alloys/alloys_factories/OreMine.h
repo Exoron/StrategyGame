@@ -10,6 +10,7 @@
 class OreMine : public UnitFactory {
  public:
   std::shared_ptr<Unit> CreateUnit() const override;
+  virtual void Info() const;
 };
 
 #endif //STRATEGY_GAME_OREMINE_H

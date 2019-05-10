@@ -7,9 +7,25 @@
 #include <gems/gems_units/GraniteWarrior.h>
 
 GraniteWarrior::GraniteWarrior() {
+  health = 35;
+  damage = 2;
   Say();
 }
 
 void GraniteWarrior::Say() const {
   std::cout << "I'm a granite warrior" << std::endl;
+}
+
+//TODO modify
+void GraniteWarrior::Attack(std::shared_ptr<UnitSet> unit_set) const {
+  unit_set->TakeDamage(damage);
+}
+
+void GraniteWarrior::TakeDamage(int damage) {
+  health -= damage;
+}
+
+void GraniteWarrior::Info() const {
+  std::cout << "Type : Granite warrior" << std::endl;
+  Unit::Info();
 }

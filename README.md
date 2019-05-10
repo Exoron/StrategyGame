@@ -14,7 +14,7 @@
     Каменная шахта - CobbleMine
     Производит каменных солдат CobbleSoldier
 
-    Гранитный карьер - GraniteQuerry
+    Гранитный карьер - GraniteQuarry
     Производит гранитных воинов - GraniteWarrior
 
 Фабрики и юниты сплавов:

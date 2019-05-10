@@ -8,7 +8,7 @@
 #include <gems/GemsPlayer.h>
 #include <alloys/AlloysPlayer.h>
 
-#include <gtest/gtest.h>
+//#include <gtest/gtest.h>
 
 int main() {
   std::shared_ptr<Player> gems_player = std::make_shared<GemsPlayer>();
@@ -36,6 +36,24 @@ int main() {
   } catch(std::out_of_range& exc) {
     std::cout << "No matching factory" << std::endl;
   }
+
+  gems_player->Info();
+  alloys_player->Info();
+
+  gems_player->Attack(0, alloys_player, 0);
+  gems_player->Attack(1, alloys_player, 0);
+  gems_player->Attack(1, alloys_player, 0);
+  gems_player->Attack(1, alloys_player, 0);
+
+  try {
+    gems_player->Attack(0, alloys_player, 2);
+  } catch(std::out_of_range& exception) {
+    std::cout << "No matching unit!" << std::endl;
+  }
+
+
+  gems_player->Info();
+  alloys_player->Info();
 
   std::cout << "Success" << std::endl;
 }

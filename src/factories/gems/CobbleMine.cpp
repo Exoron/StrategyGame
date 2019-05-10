@@ -9,3 +9,7 @@
 std::shared_ptr<Unit> CobbleMine::CreateUnit() const {
   return std::make_shared<CobbleSoldier>();
 }
+
+void CobbleMine::Info() const {
+  std::cout << "Type : Cobble mine" << std::endl;
+}

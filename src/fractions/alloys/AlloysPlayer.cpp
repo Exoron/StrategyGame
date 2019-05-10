@@ -18,3 +18,11 @@ void AlloysPlayer::BuildFactory(const int id) {
       throw std::out_of_range("No matching factory");
   }
 }
+
+void AlloysPlayer::Info() const {
+  std::cout << std::endl;
+  std::cout << "------------------------------------" << std::endl;
+  std::cout << "Fraction : Alloys" << std::endl;
+  Player::Info();
+  std::cout << std::endl;
+}
