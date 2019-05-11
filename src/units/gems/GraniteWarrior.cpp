@@ -16,14 +16,12 @@ void GraniteWarrior::Say() const {
   std::cout << "I'm a granite warrior" << std::endl;
 }
 
-//TODO modify
-void GraniteWarrior::Attack(std::shared_ptr<UnitSet> unit_set) const {
-  unit_set->TakeDamage(damage);
+// TODO modify
+void GraniteWarrior::Attack(std::shared_ptr<Player> player, int unit_id) const {
+  player->TakeDamage(unit_id, damage);
 }
 
-void GraniteWarrior::TakeDamage(int damage) {
-  health -= damage;
-}
+void GraniteWarrior::TakeDamage(int damage) { health -= damage; }
 
 void GraniteWarrior::Info() const {
   std::cout << "Type : Granite warrior" << std::endl;

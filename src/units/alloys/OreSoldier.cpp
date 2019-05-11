@@ -16,8 +16,8 @@ void OreSoldier::Say() const {
   std::cout << "I'm an ore soldier" << std::endl;
 }
 
-void OreSoldier::Attack(std::shared_ptr<UnitSet> unit_set) const {
-  unit_set->TakeDamage(damage);
+void OreSoldier::Attack(std::shared_ptr<Player> player, int unit_id) const {
+  player->TakeDamage(unit_id, damage);
 }
 
 void OreSoldier::TakeDamage(int damage) {

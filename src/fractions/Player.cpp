@@ -8,9 +8,9 @@ void Player::CreateUnit(const int id) {
   units_[units_created++] = unit_factories_.at(id)->CreateUnit();
 }
 
-void Player::Attack(int unit_id, const std::shared_ptr<Player>& enemy,
+void Player::Attack(int unit_id, std::shared_ptr<Player> enemy,
                     int enemy_unit_id) const {
-  units_.at(unit_id)->Attack(enemy->units_.at(enemy_unit_id));
+  units_.at(unit_id)->Attack(enemy, enemy_unit_id);
 }
 
 void Player::UnitsInfo() const {

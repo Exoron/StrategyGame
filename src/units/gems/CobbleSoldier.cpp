@@ -16,8 +16,8 @@ void CobbleSoldier::Say() const {
   std::cout << "I'm a cobble soldier" << std::endl;
 }
 
-void CobbleSoldier::Attack(std::shared_ptr<UnitSet> unit_set) const {
-  unit_set->TakeDamage(damage);
+void CobbleSoldier::Attack(std::shared_ptr<Player> player, int unit_id) const {
+  player->TakeDamage(unit_id, damage);
 }
 
 void CobbleSoldier::TakeDamage(int damage) {

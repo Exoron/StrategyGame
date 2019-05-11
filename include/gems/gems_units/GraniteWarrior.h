@@ -12,9 +12,10 @@ class GraniteWarrior : public Unit {
   GraniteWarrior();
   ~GraniteWarrior() override = default;
   void Say() const override;
-  virtual void Attack(std::shared_ptr<UnitSet> unit_set) const override;
+  virtual void Attack(std::shared_ptr<Player> player,
+                      int unit_id) const override;
   virtual void TakeDamage(int damage) override;
   virtual void Info() const override;
 };
 
-#endif //STRATEGY_GAME_GRANITEWARRIOR_H
+#endif  // STRATEGY_GAME_GRANITEWARRIOR_H

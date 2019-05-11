@@ -7,9 +7,13 @@
 
 #include <memory>
 
+#include <Player.h>
+
+class Player;
+
 class UnitSet {
  public:
-  virtual void Attack(std::shared_ptr<UnitSet> unit_set) const = 0;
+  virtual void Attack(std::shared_ptr<Player> player, int unit_id) const = 0;
   virtual void TakeDamage(int damage) = 0;
   virtual void Info() const = 0;
 };

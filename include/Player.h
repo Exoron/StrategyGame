@@ -7,8 +7,11 @@
 
 #include <map>
 
-#include <Unit.h>
+#include <UnitSet.h>
 #include <UnitFactory.h>
+
+class UnitSet;
+class UnitFactory;
 
 class Player {
  public:
@@ -20,7 +23,7 @@ class Player {
 
   virtual void BuildFactory(int id) = 0;
   virtual void CreateUnit(int id);
-  virtual void Attack(int unit_id, const std::shared_ptr<Player>& enemy,
+  virtual void Attack(int unit_id, std::shared_ptr<Player> enemy,
                       int enemy_unit_id) const;
   virtual void TakeDamage(int unit_id, int damage);
   void UnitsInfo() const;
@@ -29,7 +32,7 @@ class Player {
 
  protected:
   std::map<int, std::shared_ptr<UnitFactory>> unit_factories_;
-  std::map<int, std::shared_ptr<Unit>> units_;
+  std::map<int, std::shared_ptr<UnitSet>> units_;
   int units_created = 0;
 };
 

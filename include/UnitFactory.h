@@ -8,6 +8,8 @@
 #include <memory>
 #include <Unit.h>
 
+class Unit;
+
 class UnitFactory {
  public:
   UnitFactory() = default;

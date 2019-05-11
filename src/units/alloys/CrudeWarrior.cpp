@@ -17,8 +17,8 @@ void CrudeWarrior::Say() const {
 }
 
 //TODO modify
-void CrudeWarrior::Attack(std::shared_ptr<UnitSet> unit_set) const {
-  unit_set->TakeDamage(damage);
+void CrudeWarrior::Attack(std::shared_ptr<Player> player, int unit_id) const {
+  player->TakeDamage(unit_id, damage);
 }
 
 void CrudeWarrior::TakeDamage(int damage) {
