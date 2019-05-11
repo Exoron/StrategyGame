@@ -21,7 +21,10 @@ void GraniteWarrior::Attack(std::shared_ptr<Player> player, int unit_id) const {
   player->TakeDamage(unit_id, damage);
 }
 
-void GraniteWarrior::TakeDamage(int damage) { health -= damage; }
+AttackReport GraniteWarrior::TakeDamage(int damage) {
+  health -= damage;
+  return {health <= 0};
+}
 
 void GraniteWarrior::Info() const {
   std::cout << "Type : Granite warrior" << std::endl;

@@ -42,5 +42,8 @@ void Player::Info() const {
 }
 
 void Player::TakeDamage(int unit_id, int damage) {
-  units_.at(unit_id)->TakeDamage(damage);
+  AttackReport report = units_.at(unit_id)->TakeDamage(damage);
+  if(report.died) {
+    units_.erase(unit_id);
+  }
 }

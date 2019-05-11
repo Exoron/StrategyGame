@@ -8,13 +8,14 @@
 #include <memory>
 
 #include <Player.h>
+#include <AttackReport.h>
 
 class Player;
 
 class UnitSet {
  public:
   virtual void Attack(std::shared_ptr<Player> player, int unit_id) const = 0;
-  virtual void TakeDamage(int damage) = 0;
+  virtual AttackReport TakeDamage(int damage) = 0;
   virtual void Info() const = 0;
 };
 

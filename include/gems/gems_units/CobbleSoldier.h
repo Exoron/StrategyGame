@@ -14,7 +14,7 @@ class CobbleSoldier : public Unit {
   void Say() const override;
   virtual void Attack(std::shared_ptr<Player> player,
                       int unit_id) const override;
-  virtual void TakeDamage(int damage) override;
+  virtual AttackReport TakeDamage(int damage) override;
   virtual void Info() const override;
 };
 

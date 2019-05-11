@@ -55,5 +55,10 @@ int main() {
   gems_player->Info();
   alloys_player->Info();
 
+  gems_player->Attack(1, alloys_player, 0);
+  gems_player->Attack(1, alloys_player, 0);
+
+  alloys_player->Info();
+
   std::cout << "Success" << std::endl;
 }

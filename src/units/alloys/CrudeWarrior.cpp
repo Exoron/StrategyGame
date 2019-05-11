@@ -21,8 +21,9 @@ void CrudeWarrior::Attack(std::shared_ptr<Player> player, int unit_id) const {
   player->TakeDamage(unit_id, damage);
 }
 
-void CrudeWarrior::TakeDamage(int damage) {
+AttackReport CrudeWarrior::TakeDamage(int damage) {
   health -= damage;
+  return {health <= 0};
 }
 
 void CrudeWarrior::Info() const {
