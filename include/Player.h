@@ -6,12 +6,12 @@
 #define STRATEGY_GAME_PLAYER_H
 
 #include <map>
+#include <memory>
+#include <unordered_set>
+#include <vector>
 
-#include <UnitSet.h>
-#include <UnitFactory.h>
-
-class UnitSet;
 class UnitFactory;
+class UnitSet;
 
 class Player {
  public:
@@ -26,14 +26,15 @@ class Player {
   virtual void Attack(int unit_id, std::shared_ptr<Player> enemy,
                       int enemy_unit_id) const;
   virtual void TakeDamage(int unit_id, int damage);
-  void UnitsInfo() const;
+  void UnitSetsInfo() const;
   void FactoriesInfo() const;
   virtual void Info() const;
+  virtual void MakeSquad(const std::vector<int>& units);
 
  protected:
   std::map<int, std::shared_ptr<UnitFactory>> unit_factories_;
-  std::map<int, std::shared_ptr<UnitSet>> units_;
-  int units_created = 0;
+  std::map<int, std::shared_ptr<UnitSet>> unit_sets_;
+  int unit_sets_created = 0;
 };
 
 #endif  // STRATEGY_GAME_PLAYER_H

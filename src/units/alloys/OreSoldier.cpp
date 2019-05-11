@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include <alloys/alloys_units/OreSoldier.h>
+#include <Player.h>
 
 OreSoldier::OreSoldier() {
   health = 10;

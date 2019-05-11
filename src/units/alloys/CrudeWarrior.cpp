@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include <alloys/alloys_units/CrudeWarrior.h>
+#include <Player.h>
 
 CrudeWarrior::CrudeWarrior() {
   health = 25;

@@ -5,9 +5,9 @@
 #ifndef STRATEGY_GAME_UNITSET_H
 #define STRATEGY_GAME_UNITSET_H
 
+#include <iostream>
 #include <memory>
 
-#include <Player.h>
 #include <AttackReport.h>
 
 class Player;

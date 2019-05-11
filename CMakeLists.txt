@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(include)
 
-add_executable(Strategy_game main.cpp include/UnitSet.h include/AttackReport.h)
+add_executable(Strategy_game main.cpp include/UnitSet.h include/AttackReport.h include/Squad.h src/Squad.cpp include/Format.h src/Format.cpp)
 
 add_subdirectory(src/fractions)
 add_subdirectory(src/factories)

@@ -5,6 +5,7 @@
 #include <alloys/AlloysPlayer.h>
 #include <alloys/alloys_factories/OreMine.h>
 #include <alloys/alloys_factories/SteelPlant.h>
+#include <Format.h>
 
 void AlloysPlayer::BuildFactory(const int id) {
   switch(id) {
@@ -21,7 +22,7 @@ void AlloysPlayer::BuildFactory(const int id) {
 
 void AlloysPlayer::Info() const {
   std::cout << std::endl;
-  std::cout << "------------------------------------" << std::endl;
+  Format::Line();
   std::cout << "Fraction : Alloys" << std::endl;
   Player::Info();
   std::cout << std::endl;

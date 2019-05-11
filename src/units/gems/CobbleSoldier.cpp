@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include <gems/gems_units/CobbleSoldier.h>
+#include <Player.h>
 
 CobbleSoldier::CobbleSoldier() {
   health = 10;

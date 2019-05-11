@@ -5,8 +5,8 @@
 #ifndef STRATEGY_GAME_UNITFACTORY_H
 #define STRATEGY_GAME_UNITFACTORY_H
 
+#include <iostream>
 #include <memory>
-#include <Unit.h>
 
 class Unit;
 

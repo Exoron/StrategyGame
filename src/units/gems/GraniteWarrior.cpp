@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include <gems/gems_units/GraniteWarrior.h>
+#include <Player.h>
 
 GraniteWarrior::GraniteWarrior() {
   health = 35;

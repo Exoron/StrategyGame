@@ -60,5 +60,19 @@ int main() {
 
   alloys_player->Info();
 
+  alloys_player->CreateUnit(1);
+  alloys_player->CreateUnit(1);
+  alloys_player->CreateUnit(1);
+
+  alloys_player->MakeSquad({2, 3, 4});
+
+  alloys_player->Info();
+
+  for(int i = 0; i < 39; ++i) {
+    gems_player->Attack(1, alloys_player, 5);
+  }
+
+  alloys_player->Info();
+
   std::cout << "Success" << std::endl;
 }
