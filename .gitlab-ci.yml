@@ -1,15 +1,14 @@
 image: m1kev4ndyke/docker-gtest
 
 stages:
-    - build
+    - install
     
-build:
-    stage: build
+install:
+    stage: install
     script:
         - mkdir build
         - cd build
         - cmake ../
-        - make
+        - make install
     tags:
         - twexor-runner
-
