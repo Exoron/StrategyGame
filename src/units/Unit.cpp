@@ -18,3 +18,7 @@ void Unit::Info() const {
   std::cout << "Health : " << health << std::endl;
   std::cout << "Damage : " << damage << std::endl;
 }
+
+void Unit::LevelUp() {
+  damage += level_up_damage_boost;
+}

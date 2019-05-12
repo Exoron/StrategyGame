@@ -22,7 +22,7 @@ void CobbleSoldier::Attack(std::shared_ptr<Player> player, int unit_id) const {
 }
 
 AttackReport CobbleSoldier::TakeDamage(int damage) {
-  Unit::TakeDamage(damage);
+  return Unit::TakeDamage(damage);
 }
 
 void CobbleSoldier::Info() const {
@@ -31,5 +31,5 @@ void CobbleSoldier::Info() const {
 }
 
 void CobbleSoldier::LevelUp() {
-
+  Unit::LevelUp();
 }

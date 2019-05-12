@@ -22,6 +22,8 @@ class Unit : public UnitSet {
 
   virtual void Info() const override;
 
+  virtual void LevelUp() override;
+
  protected:
   int health = 0;
   int damage = 0;

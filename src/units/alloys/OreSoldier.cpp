@@ -20,7 +20,7 @@ void OreSoldier::Attack(std::shared_ptr<Player> player, int unit_id) const {
 }
 
 AttackReport OreSoldier::TakeDamage(int damage) {
-  Unit::TakeDamage(damage);
+  return Unit::TakeDamage(damage);
 }
 
 void OreSoldier::Info() const {
@@ -29,5 +29,5 @@ void OreSoldier::Info() const {
 }
 
 void OreSoldier::LevelUp() {
-
+  Unit::LevelUp();
 }

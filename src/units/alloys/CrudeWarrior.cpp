@@ -23,7 +23,7 @@ void CrudeWarrior::Attack(std::shared_ptr<Player> player, int unit_id) const {
 }
 
 AttackReport CrudeWarrior::TakeDamage(int damage) {
-  Unit::TakeDamage(damage);
+  return Unit::TakeDamage(damage);
 }
 
 void CrudeWarrior::Info() const {
@@ -32,5 +32,5 @@ void CrudeWarrior::Info() const {
 }
 
 void CrudeWarrior::LevelUp() {
-
+  Unit::LevelUp();
 }

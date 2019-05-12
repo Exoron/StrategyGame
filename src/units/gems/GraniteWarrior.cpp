@@ -23,7 +23,7 @@ void GraniteWarrior::Attack(std::shared_ptr<Player> player, int unit_id) const {
 }
 
 AttackReport GraniteWarrior::TakeDamage(int damage) {
-  Unit::TakeDamage(damage);
+  return Unit::TakeDamage(damage);
 }
 
 void GraniteWarrior::Info() const {
@@ -32,5 +32,5 @@ void GraniteWarrior::Info() const {
 }
 
 void GraniteWarrior::LevelUp() {
-
+  Unit::LevelUp();
 }
