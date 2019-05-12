@@ -25,10 +25,14 @@ class Unit : public UnitSet {
   virtual void LevelUp() override;
 
  protected:
+  Unit(int level_up_damage_boost, int experience_for_kill);
+
+ protected:
   int health = 0;
   int damage = 0;
 
   const int level_up_damage_boost = 0;
+  const int experience_for_kill = 0;
 };
 
 #endif  // STRATEGY_GAME_UNIT_H

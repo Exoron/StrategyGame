@@ -2,8 +2,12 @@
 // Created by exoron on 13.05.19.
 //
 
-#include <Unit.h>
 #include <Player.h>
+#include <Unit.h>
+
+Unit::Unit(int level_up_damage_boost, int experience_for_kill)
+    : level_up_damage_boost(level_up_damage_boost),
+      experience_for_kill(experience_for_kill) {}
 
 void Unit::Attack(std::shared_ptr<Player> player, int unit_id) const {
   player->TakeDamage(unit_id, damage);
@@ -19,6 +23,4 @@ void Unit::Info() const {
   std::cout << "Damage : " << damage << std::endl;
 }
 
-void Unit::LevelUp() {
-  damage += level_up_damage_boost;
-}
+void Unit::LevelUp() { damage += level_up_damage_boost; }

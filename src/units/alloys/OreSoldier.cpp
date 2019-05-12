@@ -7,7 +7,7 @@
 #include <Player.h>
 #include <alloys/alloys_units/OreSoldier.h>
 
-OreSoldier::OreSoldier() {
+OreSoldier::OreSoldier(): Unit(1, 1) {
   health = 10;
   damage = 1;
   Say();

@@ -7,7 +7,7 @@
 #include <Player.h>
 #include <gems/gems_units/CobbleSoldier.h>
 
-CobbleSoldier::CobbleSoldier() {
+CobbleSoldier::CobbleSoldier(): Unit(1, 1) {
   health = 10;
   damage = 1;
   Say();

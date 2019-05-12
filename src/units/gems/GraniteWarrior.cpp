@@ -7,7 +7,7 @@
 #include <Player.h>
 #include <gems/gems_units/GraniteWarrior.h>
 
-GraniteWarrior::GraniteWarrior() {
+GraniteWarrior::GraniteWarrior(): Unit(1, 2) {
   health = 35;
   damage = 2;
   Say();

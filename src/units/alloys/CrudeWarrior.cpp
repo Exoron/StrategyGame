@@ -7,7 +7,7 @@
 #include <Player.h>
 #include <alloys/alloys_units/CrudeWarrior.h>
 
-CrudeWarrior::CrudeWarrior() {
+CrudeWarrior::CrudeWarrior(): Unit(3, 2) {
   health = 25;
   damage = 3;
   Say();
