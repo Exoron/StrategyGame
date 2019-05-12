@@ -18,12 +18,11 @@ void CobbleSoldier::Say() const {
 }
 
 void CobbleSoldier::Attack(std::shared_ptr<Player> player, int unit_id) const {
-  player->TakeDamage(unit_id, damage);
+  Unit::Attack(player, unit_id);
 }
 
 AttackReport CobbleSoldier::TakeDamage(int damage) {
-  health -= damage;
-  return {health <= 0};
+  Unit::TakeDamage(damage);
 }
 
 void CobbleSoldier::Info() const {

@@ -19,12 +19,11 @@ void GraniteWarrior::Say() const {
 
 // TODO modify
 void GraniteWarrior::Attack(std::shared_ptr<Player> player, int unit_id) const {
-  player->TakeDamage(unit_id, damage);
+  Unit::Attack(player, unit_id);
 }
 
 AttackReport GraniteWarrior::TakeDamage(int damage) {
-  health -= damage;
-  return {health <= 0};
+  Unit::TakeDamage(damage);
 }
 
 void GraniteWarrior::Info() const {

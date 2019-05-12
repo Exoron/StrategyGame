@@ -16,14 +16,17 @@ class Unit : public UnitSet {
 
   virtual void Say() const = 0;
 
-  virtual void Info() const override {
-    std::cout << "Health : " << health << std::endl;
-    std::cout << "Damage : " << damage << std::endl;
-  }
+  virtual void Attack(std::shared_ptr<Player> player,
+                      int unit_id) const override;
+  virtual AttackReport TakeDamage(int damage) override;
+
+  virtual void Info() const override;
 
  protected:
   int health = 0;
   int damage = 0;
+
+  const int level_up_damage_boost = 0;
 };
 
 #endif  // STRATEGY_GAME_UNIT_H
