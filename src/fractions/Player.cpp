@@ -2,11 +2,12 @@
 // Created by exoron on 06.05.19.
 //
 
-#include <Player.h>
-#include <UnitFactory.h>
-#include <Unit.h>
-#include <Squad.h>
+#include <Army.h>
 #include <Format.h>
+#include <Player.h>
+#include <Squad.h>
+#include <Unit.h>
+#include <UnitFactory.h>
 #include <vector>
 
 void Player::CreateUnit(const int id) {
@@ -56,12 +57,11 @@ void Player::TakeDamage(int unit_id, int damage) {
 
 void Player::MakeSquad(const std::vector<int>& units) {
   std::vector<std::pair<int, std::shared_ptr<Unit>>> squad;
-  for(auto index: units) {
+  for (auto index : units) {
     std::shared_ptr<Unit> casted;
 
-    try {
-      casted = std::dynamic_pointer_cast<Unit>(unit_sets_[index]);
-    } catch(std::bad_cast& exc) {
+    casted = std::dynamic_pointer_cast<Unit>(unit_sets_[index]);
+    if (!casted) {
       std::cout << "Number " << index << " is not a Unit" << std::endl;
       continue;
     }
@@ -69,8 +69,28 @@ void Player::MakeSquad(const std::vector<int>& units) {
     squad.emplace_back(index, casted);
     unit_sets_.erase(index);
   }
-  if(squad.empty()) {
+  if (squad.empty()) {
     return;
   }
   unit_sets_[unit_sets_created++] = std::make_shared<Squad>(squad);
+}
+
+void Player::MakeArmy(const std::vector<int>& squads) {
+  std::vector<std::pair<int, std::shared_ptr<Squad>>> army;
+  for (auto index : squads) {
+    std::shared_ptr<Squad> casted;
+
+    casted = std::dynamic_pointer_cast<Squad>(unit_sets_[index]);
+    if (!casted) {
+      std::cout << "Number " << index << " is not a Squad" << std::endl;
+      continue;
+    }
+
+    army.emplace_back(index, casted);
+    unit_sets_.erase(index);
+  }
+  if (army.empty()) {
+    return;
+  }
+  unit_sets_[unit_sets_created++] = std::make_shared<Army>(army);
 }

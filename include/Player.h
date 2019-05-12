@@ -30,6 +30,7 @@ class Player {
   void FactoriesInfo() const;
   virtual void Info() const;
   virtual void MakeSquad(const std::vector<int>& units);
+  virtual void MakeArmy(const std::vector<int>& squads);
 
  protected:
   std::map<int, std::shared_ptr<UnitFactory>> unit_factories_;

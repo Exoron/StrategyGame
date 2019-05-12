@@ -15,3 +15,7 @@ void Format::DoubleLine() {
 void Format::TildaLine() {
   std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
 }
+
+void Format::StarLine() {
+  std::cout << "************************************" << std::endl;
+}

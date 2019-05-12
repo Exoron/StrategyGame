@@ -29,11 +29,9 @@ AttackReport Squad::TakeDamage(int damage) {
 void Squad::Info() const {
   std::cout << "Type : Squad" << std::endl;
   Format::TildaLine();
-  Format::TildaLine();
   for(auto& unit : units_) {
     std::cout << "Id : " << unit.first << std::endl;
     unit.second->Info();
     Format::TildaLine();
   }
-  Format::TildaLine();
 }

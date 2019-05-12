@@ -11,6 +11,7 @@ namespace Format {
 void Line();
 void DoubleLine();
 void TildaLine();
+void StarLine();
 }  // namespace Format
 
 #endif  // STRATEGY_GAME_FORMAT_H
