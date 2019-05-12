@@ -94,3 +94,6 @@ void Player::MakeArmy(const std::vector<int>& squads) {
   }
   unit_sets_[unit_sets_created++] = std::make_shared<Army>(army);
 }
+void Player::LevelUp() {
+
+}

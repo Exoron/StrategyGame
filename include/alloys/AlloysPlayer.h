@@ -9,9 +9,14 @@
 
 class AlloysPlayer : public Player {
  public:
+  enum AlloyFactory {
+    ore_mine = 0,
+    steel_plant = 1
+  };
+
   ~AlloysPlayer() override = default;
   void BuildFactory(int id) override;
   void Info() const override;
 };
 
-#endif //STRATEGY_GAME_ALLOYSPLAYER_H
+#endif  // STRATEGY_GAME_ALLOYSPLAYER_H

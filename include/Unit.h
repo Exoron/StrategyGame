@@ -9,7 +9,7 @@
 
 #include <UnitSet.h>
 
-class Unit : public UnitSet{
+class Unit : public UnitSet {
  public:
   Unit() = default;
   virtual ~Unit() = default;
@@ -26,4 +26,4 @@ class Unit : public UnitSet{
   int damage = 0;
 };
 
-#endif //STRATEGY_GAME_UNIT_H
+#endif  // STRATEGY_GAME_UNIT_H

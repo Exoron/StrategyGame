@@ -4,8 +4,8 @@
 
 #include <iostream>
 
-#include <alloys/alloys_units/CrudeWarrior.h>
 #include <Player.h>
+#include <alloys/alloys_units/CrudeWarrior.h>
 
 CrudeWarrior::CrudeWarrior() {
   health = 25;
@@ -17,7 +17,7 @@ void CrudeWarrior::Say() const {
   std::cout << "I'm a crude warrior" << std::endl;
 }
 
-//TODO modify
+// TODO modify
 void CrudeWarrior::Attack(std::shared_ptr<Player> player, int unit_id) const {
   player->TakeDamage(unit_id, damage);
 }
@@ -30,4 +30,8 @@ AttackReport CrudeWarrior::TakeDamage(int damage) {
 void CrudeWarrior::Info() const {
   std::cout << "Type : Crude warrior" << std::endl;
   Unit::Info();
+}
+
+void CrudeWarrior::LevelUp() {
+
 }

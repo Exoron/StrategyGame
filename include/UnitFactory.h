@@ -19,4 +19,4 @@ class UnitFactory {
   virtual void Info() const = 0;
 };
 
-#endif //STRATEGY_GAME_UNITFACTORY_H
+#endif  // STRATEGY_GAME_UNITFACTORY_H

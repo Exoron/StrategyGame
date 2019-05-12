@@ -13,4 +13,4 @@ class OreMine : public UnitFactory {
   virtual void Info() const;
 };
 
-#endif //STRATEGY_GAME_OREMINE_H
+#endif  // STRATEGY_GAME_OREMINE_H

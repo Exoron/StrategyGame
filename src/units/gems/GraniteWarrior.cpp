@@ -4,8 +4,8 @@
 
 #include <iostream>
 
-#include <gems/gems_units/GraniteWarrior.h>
 #include <Player.h>
+#include <gems/gems_units/GraniteWarrior.h>
 
 GraniteWarrior::GraniteWarrior() {
   health = 35;
@@ -30,4 +30,8 @@ AttackReport GraniteWarrior::TakeDamage(int damage) {
 void GraniteWarrior::Info() const {
   std::cout << "Type : Granite warrior" << std::endl;
   Unit::Info();
+}
+
+void GraniteWarrior::LevelUp() {
+
 }

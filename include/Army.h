@@ -20,8 +20,10 @@ class Army : public UnitSet {
   virtual AttackReport TakeDamage(int damage) override;
   virtual void Info() const override;
 
+  virtual void LevelUp() override;
+
  private:
   std::map<int, std::shared_ptr<Squad>> squads_;
 };
 
-#endif //STRATEGY_GAME_ARMY_H
+#endif  // STRATEGY_GAME_ARMY_H

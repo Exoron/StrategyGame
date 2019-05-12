@@ -9,6 +9,11 @@
 
 class GemsPlayer : public Player {
  public:
+  enum GemsFactory{
+    cobble_mine = 0,
+    granite_quarry = 1
+  };
+
   ~GemsPlayer() override = default;
   void BuildFactory(int id) override;
   void Info() const override;

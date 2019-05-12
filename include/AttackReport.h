@@ -9,4 +9,4 @@ struct AttackReport {
   bool died = false;
 };
 
-#endif //STRATEGY_GAME_ATTACKREPORT_H
+#endif  // STRATEGY_GAME_ATTACKREPORT_H

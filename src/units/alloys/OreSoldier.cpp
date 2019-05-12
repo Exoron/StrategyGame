@@ -4,8 +4,8 @@
 
 #include <iostream>
 
-#include <alloys/alloys_units/OreSoldier.h>
 #include <Player.h>
+#include <alloys/alloys_units/OreSoldier.h>
 
 OreSoldier::OreSoldier() {
   health = 10;
@@ -13,9 +13,7 @@ OreSoldier::OreSoldier() {
   Say();
 }
 
-void OreSoldier::Say() const {
-  std::cout << "I'm an ore soldier" << std::endl;
-}
+void OreSoldier::Say() const { std::cout << "I'm an ore soldier" << std::endl; }
 
 void OreSoldier::Attack(std::shared_ptr<Player> player, int unit_id) const {
   player->TakeDamage(unit_id, damage);
@@ -29,4 +27,8 @@ AttackReport OreSoldier::TakeDamage(int damage) {
 void OreSoldier::Info() const {
   std::cout << "Type : Ore soldier" << std::endl;
   Unit::Info();
+}
+
+void OreSoldier::LevelUp() {
+
 }

@@ -4,8 +4,8 @@
 
 #include <iostream>
 
-#include <gems/gems_units/CobbleSoldier.h>
 #include <Player.h>
+#include <gems/gems_units/CobbleSoldier.h>
 
 CobbleSoldier::CobbleSoldier() {
   health = 10;
@@ -29,4 +29,8 @@ AttackReport CobbleSoldier::TakeDamage(int damage) {
 void CobbleSoldier::Info() const {
   std::cout << "Type : Cobble soldier" << std::endl;
   Unit::Info();
+}
+
+void CobbleSoldier::LevelUp() {
+
 }

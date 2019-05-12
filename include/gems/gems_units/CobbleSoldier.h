@@ -16,6 +16,8 @@ class CobbleSoldier : public Unit {
                       int unit_id) const override;
   virtual AttackReport TakeDamage(int damage) override;
   virtual void Info() const override;
+
+  virtual void LevelUp() override;
 };
 
 #endif  // STRATEGY_GAME_COBBLESOLDIER_H

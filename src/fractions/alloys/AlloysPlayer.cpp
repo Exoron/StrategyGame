@@ -2,13 +2,13 @@
 // Created by exoron on 29.03.19.
 //
 
+#include <Format.h>
 #include <alloys/AlloysPlayer.h>
 #include <alloys/alloys_factories/OreMine.h>
 #include <alloys/alloys_factories/SteelPlant.h>
-#include <Format.h>
 
 void AlloysPlayer::BuildFactory(const int id) {
-  switch(id) {
+  switch (id) {
     case 0:
       unit_factories_[id] = std::make_shared<OreMine>();
       return;

@@ -7,7 +7,7 @@
 #include <gems/gems_factories/GraniteQuarry.h>
 
 void GemsPlayer::BuildFactory(const int id) {
-  switch(id) {
+  switch (id) {
     case 0:
       unit_factories_[id] = std::make_shared<CobbleMine>();
       return;

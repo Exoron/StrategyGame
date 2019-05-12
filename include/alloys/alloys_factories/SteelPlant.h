@@ -13,4 +13,4 @@ class SteelPlant : public UnitFactory {
   virtual void Info() const;
 };
 
-#endif //STRATEGY_GAME_STEELPLANT_H
+#endif  // STRATEGY_GAME_STEELPLANT_H

@@ -20,6 +20,8 @@ class Squad : public UnitSet {
   virtual AttackReport TakeDamage(int damage) override;
   virtual void Info() const override;
 
+  virtual void LevelUp() override;
+
  private:
   std::map<int, std::shared_ptr<Unit>> units_;
 };
