@@ -44,11 +44,8 @@ int main() {
   gems_player->Attack(1, alloys_player, 0);
   gems_player->Attack(1, alloys_player, 0);
 
-  try {
-    gems_player->Attack(0, alloys_player, 2);
-  } catch (std::out_of_range& exception) {
-    std::cout << "No matching unit!" << std::endl;
-  }
+  gems_player->Attack(0, alloys_player, 2);
+
 
   gems_player->Info();
   alloys_player->Info();
@@ -61,18 +58,22 @@ int main() {
   alloys_player->CreateUnit(1);
   alloys_player->CreateUnit(1);
   alloys_player->CreateUnit(1);
+  alloys_player->CreateUnit(1);
+  alloys_player->CreateUnit(1);
 
-  alloys_player->MakeSquad({2, 3, 4});
+  alloys_player->MakeSquad({2, 3, 4, 5, 6});
 
   alloys_player->Info();
 
   alloys_player->MakeSquad({5});
+  gems_player->Info();
 
-  for (int i = 0; i < 39; ++i) {
-    gems_player->Attack(1, alloys_player, 5);
+  for (int i = 0; i < 65; ++i) {
+    gems_player->Attack(1, alloys_player, 7);
   }
 
   alloys_player->Info();
+  gems_player->Info();
 
   gems_player->CreateUnit(0);
   gems_player->CreateUnit(1);

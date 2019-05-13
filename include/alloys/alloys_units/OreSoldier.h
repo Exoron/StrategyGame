@@ -12,7 +12,7 @@ class OreSoldier : public Unit {
   OreSoldier();
   ~OreSoldier() override = default;
   void Say() const override;
-  virtual void Attack(std::shared_ptr<Player> player,
+  virtual AttackReport Attack(std::shared_ptr<Player> player,
                       int unit_id) const override;
   virtual AttackReport TakeDamage(int damage) override;
   virtual void Info() const override;

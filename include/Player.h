@@ -9,6 +9,7 @@
 #include <memory>
 #include <unordered_set>
 #include <vector>
+#include <AttackReport.h>
 
 class UnitFactory;
 class UnitSet;
@@ -24,14 +25,17 @@ class Player {
   virtual void BuildFactory(int id) = 0;
   virtual void CreateUnit(int id);
   virtual void Attack(int unit_id, std::shared_ptr<Player> enemy,
-                      int enemy_unit_id) const;
-  virtual void TakeDamage(int unit_id, int damage);
-  void UnitSetsInfo() const;
-  void FactoriesInfo() const;
+                      int enemy_unit_id);
+  virtual AttackReport TakeDamage(int unit_id, int damage);
   virtual void Info() const;
   virtual void MakeSquad(const std::vector<int>& units);
   virtual void MakeArmy(const std::vector<int>& squads);
+
+ protected:
+  void UnitSetsInfo() const;
+  void FactoriesInfo() const;
   virtual void LevelUp();
+  virtual void GetExperience(int experience);
 
  protected:
   std::map<int, std::shared_ptr<UnitFactory>> unit_factories_;

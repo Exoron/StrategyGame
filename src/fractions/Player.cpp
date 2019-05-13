@@ -16,8 +16,14 @@ void Player::CreateUnit(const int id) {
 }
 
 void Player::Attack(int unit_id, std::shared_ptr<Player> enemy,
-                    int enemy_unit_id) const {
-  unit_sets_.at(unit_id)->Attack(enemy, enemy_unit_id);
+                    int enemy_unit_id) {
+  AttackReport report{};
+  try {
+    report = unit_sets_.at(unit_id)->Attack(enemy, enemy_unit_id);
+  } catch (std::out_of_range& exc) {
+    std::cout << "No matching unit set" << std::endl;
+  }
+  GetExperience(report.experience);
 }
 
 void Player::UnitSetsInfo() const {
@@ -40,6 +46,10 @@ void Player::FactoriesInfo() const {
 
 void Player::Info() const {
   Format::Line();
+  std::cout << "Level : " << level << std::endl;
+  std::cout << "Experience : " << experience << " / " << exp_to_level_up
+            << std::endl;
+  Format::Line();
   std::cout << "Factories : " << std::endl;
   FactoriesInfo();
   Format::Line();
@@ -48,11 +58,17 @@ void Player::Info() const {
   Format::Line();
 }
 
-void Player::TakeDamage(int unit_id, int damage) {
-  AttackReport report = unit_sets_.at(unit_id)->TakeDamage(damage);
+AttackReport Player::TakeDamage(int unit_id, int damage) {
+  AttackReport report{};
+  try {
+    report = unit_sets_.at(unit_id)->TakeDamage(damage);
+  } catch(std::out_of_range& exc) {
+    std::cout << "No matching unit set" << std::endl;
+  }
   if (report.died) {
     unit_sets_.erase(unit_id);
   }
+  return report;
 }
 
 void Player::MakeSquad(const std::vector<int>& units) {
@@ -60,7 +76,12 @@ void Player::MakeSquad(const std::vector<int>& units) {
   for (auto index : units) {
     std::shared_ptr<Unit> casted;
 
-    casted = std::dynamic_pointer_cast<Unit>(unit_sets_[index]);
+    try {
+      casted = std::dynamic_pointer_cast<Unit>(unit_sets_.at(index));
+    } catch(std::out_of_range& exc) {
+      std::cout << "No matching unit for number " << index << std::endl;
+      return;
+    }
     if (!casted) {
       std::cout << "Number " << index << " is not a Unit" << std::endl;
       continue;
@@ -80,7 +101,11 @@ void Player::MakeArmy(const std::vector<int>& squads) {
   for (auto index : squads) {
     std::shared_ptr<Squad> casted;
 
-    casted = std::dynamic_pointer_cast<Squad>(unit_sets_[index]);
+    try {
+      casted = std::dynamic_pointer_cast<Squad>(unit_sets_.at(index));
+    } catch(std::out_of_range& exc) {
+      std::cout << "No matching squad for number " << index << std::endl;
+    }
     if (!casted) {
       std::cout << "Number " << index << " is not a Squad" << std::endl;
       continue;
@@ -94,6 +119,18 @@ void Player::MakeArmy(const std::vector<int>& squads) {
   }
   unit_sets_[unit_sets_created++] = std::make_shared<Army>(army);
 }
-void Player::LevelUp() {
 
+void Player::LevelUp() {
+  experience -= exp_to_level_up;
+  ++level;
+  for (auto& unit_set : unit_sets_) {
+    unit_set.second->LevelUp();
+  }
+}
+
+void Player::GetExperience(int experience) {
+  this->experience += experience;
+  while (this->experience >= exp_to_level_up) {
+    LevelUp();
+  }
 }

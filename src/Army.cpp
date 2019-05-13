@@ -12,10 +12,14 @@ Army::Army(const std::vector<std::pair<int, std::shared_ptr<Squad>>>& squads) {
   }
 }
 
-void Army::Attack(std::shared_ptr<Player> player, int unit_id) const {
+AttackReport Army::Attack(std::shared_ptr<Player> player, int unit_id) const {
+  AttackReport total_report{};
   for (auto& squad : squads_) {
-    squad.second->Attack(player, unit_id);
+    auto report = squad.second->Attack(player, unit_id);
+    total_report.died = (total_report.died || report.died);
+    total_report.experience += report.experience;
   }
+  return total_report;
 }
 
 AttackReport Army::TakeDamage(int damage) {
@@ -23,7 +27,7 @@ AttackReport Army::TakeDamage(int damage) {
   if (report.died) {
     squads_.erase(squads_.begin());
   }
-  return {squads_.empty()};
+  return {squads_.empty(), report.experience};
 }
 
 void Army::Info() const {
@@ -35,6 +39,7 @@ void Army::Info() const {
     Format::StarLine();
   }
 }
+
 void Army::LevelUp() {
   for(auto& squad: squads_) {
     squad.second->LevelUp();

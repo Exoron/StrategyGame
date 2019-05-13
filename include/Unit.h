@@ -16,7 +16,7 @@ class Unit : public UnitSet {
 
   virtual void Say() const = 0;
 
-  virtual void Attack(std::shared_ptr<Player> player,
+  virtual AttackReport Attack(std::shared_ptr<Player> player,
                       int unit_id) const override;
   virtual AttackReport TakeDamage(int damage) override;
 

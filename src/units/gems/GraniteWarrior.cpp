@@ -18,8 +18,8 @@ void GraniteWarrior::Say() const {
 }
 
 // TODO modify
-void GraniteWarrior::Attack(std::shared_ptr<Player> player, int unit_id) const {
-  Unit::Attack(player, unit_id);
+AttackReport GraniteWarrior::Attack(std::shared_ptr<Player> player, int unit_id) const {
+  return Unit::Attack(player, unit_id);
 }
 
 AttackReport GraniteWarrior::TakeDamage(int damage) {

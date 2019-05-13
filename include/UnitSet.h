@@ -14,7 +14,7 @@ class Player;
 
 class UnitSet {
  public:
-  virtual void Attack(std::shared_ptr<Player> player, int unit_id) const = 0;
+  virtual AttackReport Attack(std::shared_ptr<Player> player, int unit_id) const = 0;
   virtual AttackReport TakeDamage(int damage) = 0;
   virtual void Info() const = 0;
   virtual void LevelUp() = 0;

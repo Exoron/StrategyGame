@@ -12,10 +12,14 @@ Squad::Squad(const std::vector<std::pair<int, std::shared_ptr<Unit>>>& units) {
   }
 }
 
-void Squad::Attack(std::shared_ptr<Player> player, int unit_id) const {
+AttackReport Squad::Attack(std::shared_ptr<Player> player, int unit_id) const {
+  AttackReport total_report{};
   for (auto& unit : units_) {
-    unit.second->Attack(player, unit_id);
+    auto report = unit.second->Attack(player, unit_id);
+    total_report.died = (total_report.died || report.died);
+    total_report.experience += report.experience;
   }
+  return total_report;
 }
 
 AttackReport Squad::TakeDamage(int damage) {
@@ -23,7 +27,7 @@ AttackReport Squad::TakeDamage(int damage) {
   if (report.died) {
     units_.erase(units_.begin());
   }
-  return {units_.empty()};
+  return {units_.empty(), report.experience};
 }
 
 void Squad::Info() const {

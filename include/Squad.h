@@ -17,7 +17,7 @@ class Squad : public UnitSet {
   explicit Squad(const std::vector<std::pair<int, std::shared_ptr<Unit>>>& units);
   virtual ~Squad() = default;
 
-  virtual void Attack(std::shared_ptr<Player> player,
+  virtual AttackReport Attack(std::shared_ptr<Player> player,
                       int unit_id) const override;
   virtual AttackReport TakeDamage(int damage) override;
   virtual void Info() const override;

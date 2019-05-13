@@ -15,8 +15,8 @@ OreSoldier::OreSoldier(): Unit(1, 1) {
 
 void OreSoldier::Say() const { std::cout << "I'm an ore soldier" << std::endl; }
 
-void OreSoldier::Attack(std::shared_ptr<Player> player, int unit_id) const {
-  Unit::Attack(player, unit_id);
+AttackReport OreSoldier::Attack(std::shared_ptr<Player> player, int unit_id) const {
+  return Unit::Attack(player, unit_id);
 }
 
 AttackReport OreSoldier::TakeDamage(int damage) {

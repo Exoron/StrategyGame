@@ -7,6 +7,7 @@
 
 struct AttackReport {
   bool died = false;
+  int experience = 0;
 };
 
 #endif  // STRATEGY_GAME_ATTACKREPORT_H
