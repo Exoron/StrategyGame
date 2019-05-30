@@ -12,6 +12,12 @@ class CrudeWarrior : public Unit {
   CrudeWarrior();
   ~CrudeWarrior() override = default;
   void Say() const override;
+  virtual AttackReport Attack(std::shared_ptr<Player> player,
+                      int unit_id) const override;
+  virtual AttackReport TakeDamage(int damage) override;
+  virtual void Info() const override;
+
+  virtual void LevelUp() override;
 };
 
-#endif //STRATEGY_GAME_CRUDEWARRIOR_H
+#endif  // STRATEGY_GAME_CRUDEWARRIOR_H

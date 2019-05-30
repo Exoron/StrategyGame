@@ -9,7 +9,8 @@
 
 class CobbleMine : public UnitFactory {
  public:
-  Unit* CreateUnit() const override;
+  std::shared_ptr<Unit> CreateUnit() const override;
+  virtual void Info() const;
 };
 
 #endif //STRATEGY_GAME_COBBLEMINE_H

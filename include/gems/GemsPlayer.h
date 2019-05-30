@@ -9,8 +9,14 @@
 
 class GemsPlayer : public Player {
  public:
+  enum GemsFactory{
+    cobble_mine = 0,
+    granite_quarry = 1
+  };
+
   ~GemsPlayer() override = default;
-  void BuildFactory(const int id) override;
+  void BuildFactory(int id) override;
+  void Info() const override;
 };
 
 #endif //STRATEGY_GAME_GEMSPLAYER_H

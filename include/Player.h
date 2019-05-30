@@ -5,36 +5,46 @@
 #ifndef STRATEGY_GAME_PLAYER_H
 #define STRATEGY_GAME_PLAYER_H
 
-#include <unordered_map>
+#include <map>
+#include <memory>
+#include <unordered_set>
 #include <vector>
+#include <AttackReport.h>
 
-#include <Unit.h>
-#include <UnitFactory.h>
+class UnitFactory;
+class UnitSet;
 
 class Player {
  public:
-  Player() : units_(0) {}
+  Player() = default;
 
   Player(const Player&) = delete;
   Player& operator=(const Player&) = delete;
-  virtual ~Player() {
-    for(auto*& unit : units_) {
-      delete unit;
-      unit = nullptr;
-    }
-    for(auto& factory : unit_factories_) {
-      delete factory.second;
-    }
-  }
+  virtual ~Player() = default;
 
-  virtual void BuildFactory(const int id) = 0;
-  virtual void CreateUnit(const int id) {
-    units_.push_back(unit_factories_.at(id)->CreateUnit());
-  }
+  virtual void BuildFactory(int id) = 0;
+  virtual void CreateUnit(int id);
+  virtual void Attack(int unit_id, std::shared_ptr<Player> enemy,
+                      int enemy_unit_id);
+  virtual AttackReport TakeDamage(int unit_id, int damage);
+  virtual void Info() const;
+  virtual void MakeSquad(const std::vector<int>& units);
+  virtual void MakeArmy(const std::vector<int>& squads);
 
  protected:
-  std::unordered_map<int, UnitFactory*> unit_factories_;
-  std::vector<Unit*> units_;
+  void UnitSetsInfo() const;
+  void FactoriesInfo() const;
+  virtual void LevelUp();
+  virtual void GetExperience(int experience);
+
+ protected:
+  std::map<int, std::shared_ptr<UnitFactory>> unit_factories_;
+  std::map<int, std::shared_ptr<UnitSet>> unit_sets_;
+  int unit_sets_created = 0;
+
+  int level = 1;
+  int experience = 0;
+  int exp_to_level_up = 10;
 };
 
-#endif //STRATEGY_GAME_PLAYER_H
+#endif  // STRATEGY_GAME_PLAYER_H

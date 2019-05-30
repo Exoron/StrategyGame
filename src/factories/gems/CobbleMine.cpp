@@ -6,6 +6,10 @@
 #include <gems/gems_factories/CobbleMine.h>
 #include <gems/gems_units/CobbleSoldier.h>
 
-Unit* CobbleMine::CreateUnit() const {
-  return new CobbleSoldier();
+std::shared_ptr<Unit> CobbleMine::CreateUnit() const {
+  return std::make_shared<CobbleSoldier>();
+}
+
+void CobbleMine::Info() const {
+  std::cout << "Type : Cobble mine" << std::endl;
 }

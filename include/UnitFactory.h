@@ -5,14 +5,18 @@
 #ifndef STRATEGY_GAME_UNITFACTORY_H
 #define STRATEGY_GAME_UNITFACTORY_H
 
-#include <Unit.h>
+#include <iostream>
+#include <memory>
+
+class Unit;
 
 class UnitFactory {
  public:
   UnitFactory() = default;
   virtual ~UnitFactory() = default;
 
-  virtual Unit* CreateUnit() const = 0;
+  virtual std::shared_ptr<Unit> CreateUnit() const = 0;
+  virtual void Info() const = 0;
 };
 
-#endif //STRATEGY_GAME_UNITFACTORY_H
+#endif  // STRATEGY_GAME_UNITFACTORY_H
